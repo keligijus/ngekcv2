@@ -3,14 +3,16 @@
 
 
   /** @ngInject */
-  function controller() {
+  function controller(PersonalStatementFactory) {
     var vm = this;
+    vm.f = PersonalStatementFactory;
 
-    console.log('personalStatementCtrl');
+    vm.f.init();
+
   }
 
   angular
     .module('personalStatement')
-    .controller('personalStatementCtrl', controller);
+    .controller('personalStatementController', controller);
 
 })();
