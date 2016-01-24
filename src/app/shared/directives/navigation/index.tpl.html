@@ -1,9 +1,14 @@
 <md-icon ng-click="vm.openLeftMenu()" aria-label="menu">menu</md-icon>
 
-<md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
+<md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" layout-fill>
 
   <md-toolbar>
     <h1 class="md-toolbar-tools">Sidenav Left</h1>
   </md-toolbar>
 
+  <md-list>
+    <md-list-item>
+      <a ui-sref="personalStatement">Personal statement</a>
+    </md-list-item>
+  </md-list>
 </md-sidenav>
