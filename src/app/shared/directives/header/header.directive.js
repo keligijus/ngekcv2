@@ -18,7 +18,7 @@
 
     function controller() {
       // var vm = this;
-    }  
+    }
 
   angular
     .module('ngekcv2')

@@ -7,22 +7,12 @@
       restrict: 'E',
       templateUrl: 'app/shared/directives/navigation/index.tpl.html',
       scope: {},
-      controller: controller,
+      controller: "navigationController",
       controllerAs: 'vm',
       bindToController: true
     };
 
     return directive;
-  }
-
-  function controller($mdSidenav) {
-    var vm = this;
-
-    vm.openLeftMenu = function() {
-      $mdSidenav('left').toggle();
-    }
-
-
   }
 
   angular
