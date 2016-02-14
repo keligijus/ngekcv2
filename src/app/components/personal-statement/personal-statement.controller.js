@@ -13,6 +13,6 @@
 
   angular
     .module('personalStatement')
-    .controller('personalStatementController', controller);
+    .controller('PersonalStatementController', controller);
 
 })();

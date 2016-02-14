@@ -31,7 +31,7 @@
 
     f.prepStatement = function(){
       f.data = f.data.replace(/\r?\n/g, '<br />');
-    }    
+    }
 
     return f;
   }

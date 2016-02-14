@@ -7,7 +7,7 @@
       restrict: 'E',
       templateUrl: 'app/shared/directives/navigation/index.tpl.html',
       scope: {},
-      controller: "navigationController",
+      controller: "NavigationController",
       controllerAs: 'vm',
       bindToController: true
     };

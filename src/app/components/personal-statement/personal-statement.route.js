@@ -11,7 +11,7 @@
       .state('personalStatement', {
         url: '/personal-statement',
         templateUrl: 'app/components/personal-statement/index.html',
-        controller: 'personalStatementController',
+        controller: 'PersonalStatementController',
         controllerAs: 'vm'
       });
 

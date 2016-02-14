@@ -20,12 +20,21 @@
     <!-- endinject -->
     <!-- endbuild -->
   </head>
-  <body>
+  <body  layout="column">
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div ui-view></div>
+
+    <ek-header></ek-header>
+
+    <div layout="row" flex>
+
+        <ek-navigation layout="column"></ek-navigation>
+
+        <md-content ui-view layout="column" flex layout-padding></md-content>
+
+    </div>
 
     <!-- build:js(src) scripts/vendor.js -->
     <!-- bower:js -->

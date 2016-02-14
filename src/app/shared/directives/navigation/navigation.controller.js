@@ -3,16 +3,21 @@
 
 
   /** @ngInject */
-  function controller($mdSidenav) {
+  function controller($mdSidenav, $rootScope) {
     var vm = this;
 
     vm.openLeftMenu = function() {
       $mdSidenav('left').toggle();
     }
 
+    $rootScope.$on('$stateChangeStart',
+      function(event){
+        $mdSidenav('left').close();
+      });
+
   }
 
   angular
     .module('ngekcv2')
-    .controller('navigationController', controller);
+    .controller('NavigationController', controller);
 })();

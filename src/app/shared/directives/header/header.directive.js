@@ -1,8 +1,16 @@
 (function() {
   'use strict';
 
-
   /** @ngInject */
+function controller($mdSidenav) {
+    var vm = this;
+
+    vm.openLeftMenu = function() {
+      $mdSidenav('left').toggle();
+    }
+
+  }
+
   function directive() {
     var directive = {
       restrict: 'E',
@@ -16,9 +24,6 @@
     return directive;
   }
 
-    function controller() {
-      // var vm = this;
-    }
 
   angular
     .module('ngekcv2')
