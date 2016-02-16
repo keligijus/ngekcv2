@@ -2,7 +2,7 @@
   'use strict';
 
   var settings = {
-        debug: false
+        debug: true
       };
 
   angular

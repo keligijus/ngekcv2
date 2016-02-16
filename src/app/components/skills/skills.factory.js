@@ -1,9 +1,10 @@
 (function() {
   'use strict';
 
-  function factory($http, $log, $q, SETTINGS) {
-    var debug = SETTINGS.debug;
-    var f = {
+  function factory($http, $log, $q, SETTINGS, dataPrepService) {
+    var debug = SETTINGS.debug,
+        dataPrep = dataPrepService,
+        f = {
       softSkill: {
         data: [],
         displayData: [],
@@ -35,9 +36,8 @@
           if (debug) { $log.debug("Combined all data"); }
           if (debug) { $log.log("Results: ", results); }
 
-          f.prepData(results[0], 'softSkill');
-          f.prepData(results[1], 'hardSkill')
-          return results;
+          f.softSkill.data = dataPrep.prepData(results[0], 'softSkill');
+          f.hardSkill.data = dataPrep.prepData(results[1], 'hardSkill');
         });
     }
 
@@ -48,27 +48,6 @@
 
         return response.data.feed;
       });
-    }
-
-    f.prepData = function(data, dataType) {
-      data.entry.forEach(function(entry, index) {
-        f[dataType].data[index] = f.cleanupData(entry, /gsx\$\w+/, index, dataType);
-      });
-
-      if (debug) { $log.debug("Ready data for " + dataType); }
-      if (debug) { $log.log(f[dataType].data); }
-    }
-
-    f.cleanupData = function(entry, filter) {
-      var itemName, dataObj = {};
-        for (itemName in entry) {
-          if (entry.hasOwnProperty(itemName) && filter.test(itemName)) {
-              var cleanitemName = itemName.replace('gsx$', '');
-              dataObj[cleanitemName] = entry[itemName].$t;
-          }
-        }
-        return dataObj;
-
     }
 
     return f;
