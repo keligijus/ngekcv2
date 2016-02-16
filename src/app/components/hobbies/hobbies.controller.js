@@ -13,6 +13,6 @@
 
   angular
     .module('hobbies')
-    .controller('hobbiesController', controller);
+    .controller('HobbiesController', controller);
 
 })();
