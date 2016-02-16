@@ -1,14 +1,29 @@
 (function() {
   'use strict';
 
-  function service($log, SETTINGS) {
+  function service($http, $q, $log, SETTINGS) {
     var s = {};
     var debug = SETTINGS.debug;
+
+    s.getUrl = function(spreadsheetID) {
+      return "https://spreadsheets.google.com/feeds/list/" + spreadsheetID + "/od6/public/values?alt=json"
+    }
+
+    s.getData = function(dataType, spreadsheetID) {
+      var url = s.getUrl(spreadsheetID);
+      return $http.get(url).then(function(response) {
+        if (debug) { $log.debug("Retrieved " + dataType + " data"); }
+        if (debug) { $log.log(response.data.feed); }
+
+        // return response.data.feed;
+        return s.prepData(response.data.feed, dataType);
+      });
+    }
 
     s.prepData = function(data, dataType) {
       var dataArr = [];
       data.entry.forEach(function(entry, index) {
-        dataArr[index] = s.cleanupData(entry, /gsx\$\w+/, index, dataType);
+        dataArr[index] = s.removeGooglePrefixes(entry, /gsx\$\w+/, index, dataType);
       });
 
       if (debug) { $log.debug("Ready data for " + dataType); }
@@ -17,7 +32,7 @@
       return dataArr;
     }
 
-    s.cleanupData = function(entry, filter) {
+    s.removeGooglePrefixes = function(entry, filter) {
       var itemName, dataObj = {};
         for (itemName in entry) {
           if (entry.hasOwnProperty(itemName) && filter.test(itemName)) {

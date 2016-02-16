@@ -6,6 +6,7 @@
     // app
     'personalStatement',
     'skills',
+    'portfolioItems',
 
     // resources
     'ngAnimate',
