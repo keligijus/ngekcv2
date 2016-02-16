@@ -46,35 +46,20 @@
         if (debug) { $log.debug("Retrieved " + skillType + " data"); }
         if (debug) { $log.log(response.data.feed); }
 
-        // f[skillType].data = response.data.feed;
-
         return response.data.feed;
       });
     }
 
-    // f.prepData = function(data) {
-    //   f.prepSoftSkill(data[0]);
-    //   f.prepHardSkill(data[1]);
-    // }
-
-    f.prepSoftSkill = function(data) {
-      data.entry.forEach(function(entry) {
-        f.softSkill.data.trait = entry.gsx$trait.$t;
-        f.softSkill.data.whyUseful = entry.gsx$whyuseful.$t;
-      });
-
-    }
-
     f.prepData = function(data, skillType) {
       data.entry.forEach(function(entry, index) {
-        f[skillType].data[index] =f.asignSkills(entry, /gsx\$\w+/, index, skillType);
+        f[skillType].data[index] = f.cleanupData(entry, /gsx\$\w+/, index, skillType);
       });
 
       if (debug) { $log.debug("Ready data for " + skillType); }
       if (debug) { $log.log(f[skillType].data); }
     }
 
-    f.asignSkills = function(entry, filter, index, skillType) {
+    f.cleanupData = function(entry, filter, index, skillType) {
       var skillName, skillsObj = {};
         for (skillName in entry) {
           if (entry.hasOwnProperty(skillName) && filter.test(skillName)) {
