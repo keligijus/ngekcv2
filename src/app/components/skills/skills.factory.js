@@ -41,33 +41,33 @@
         });
     }
 
-    f.getStatement = function(skillType){
-      return $http.get(f[skillType].url).then(function(response) {
-        if (debug) { $log.debug("Retrieved " + skillType + " data"); }
+    f.getStatement = function(dataType){
+      return $http.get(f[dataType].url).then(function(response) {
+        if (debug) { $log.debug("Retrieved " + dataType + " data"); }
         if (debug) { $log.log(response.data.feed); }
 
         return response.data.feed;
       });
     }
 
-    f.prepData = function(data, skillType) {
+    f.prepData = function(data, dataType) {
       data.entry.forEach(function(entry, index) {
-        f[skillType].data[index] = f.cleanupData(entry, /gsx\$\w+/, index, skillType);
+        f[dataType].data[index] = f.cleanupData(entry, /gsx\$\w+/, index, dataType);
       });
 
-      if (debug) { $log.debug("Ready data for " + skillType); }
-      if (debug) { $log.log(f[skillType].data); }
+      if (debug) { $log.debug("Ready data for " + dataType); }
+      if (debug) { $log.log(f[dataType].data); }
     }
 
-    f.cleanupData = function(entry, filter, index, skillType) {
-      var skillName, skillsObj = {};
-        for (skillName in entry) {
-          if (entry.hasOwnProperty(skillName) && filter.test(skillName)) {
-              var cleanSkillName = skillName.replace('gsx$', '');
-              skillsObj[cleanSkillName] = entry[skillName].$t;
+    f.cleanupData = function(entry, filter, index, dataType) {
+      var itemName, dataObj = {};
+        for (itemName in entry) {
+          if (entry.hasOwnProperty(itemName) && filter.test(itemName)) {
+              var cleanitemName = itemName.replace('gsx$', '');
+              dataObj[cleanitemName] = entry[itemName].$t;
           }
         }
-        return skillsObj;
+        return dataObj;
 
     }
 
