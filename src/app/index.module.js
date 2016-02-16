@@ -8,6 +8,7 @@
     'skills',
     'portfolioItems',
     'hobbies',
+    'workExperience',
 
     // resources
     'ngAnimate',

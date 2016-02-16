@@ -1,0 +1,65 @@
+<md-content layout-padding>
+
+  <!-- <pre>{{ vm.f.workExperience.data | json }}</pre> -->
+
+  <h2>Work Experience</h2>
+
+  <md-card  ng-repeat="item in vm.f.workExperience.data" layout-padding>
+        <md-card-header>
+          <md-card-header-text>
+            <span class="md-title">{{ item.position }} @ {{ item.employer }}</span><br>
+            <span class="md-subhead">{{ item.startdate }} - {{ item.finishdate }}</span>
+          </md-card-header-text>
+        </md-card-header>
+        <md-card-content layout="row">
+          <span>
+            <strong>Loved: </strong>
+          </span>
+          <span>
+            {{ item.loved }}
+          </span>
+        </md-card-content>
+        <md-card-content layout="row">
+          <span>
+            <strong>Learned: </strong>
+          </span>
+          <span>
+            {{ item.learned }}
+          </span>
+        </md-card-content>
+        <md-card-content layout="row">
+          <span>
+            <strong>Left (why?): </strong>
+          </span>
+          <span>
+            {{ item.leftwhy }}
+          </span>
+        </md-card-content>
+        <md-card-content layout="row">
+          <span>
+            <strong>Day to day: </strong>
+          </span>
+          <span>
+            {{ item.daytoday }}
+          </span>
+        </md-card-content>
+         <md-card-actions layout="row" layout-align="end center">
+          <md-button
+            href="{{ item.link }}"
+            target="_blank"
+            class="md-raised md-primary md-button md-ink-ripple"
+            disabled="{{ item.disableLink }}">
+            Employer's website
+            <svg fill="#ffffff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M9 5v2h6.59L4 18.59 5.41 20 17 8.41V15h2V5z"/>
+            </svg>
+          </md-button>
+         </md-card-actions>
+      </md-card>
+  </md-card>
+
+
+</md-content>
+
+</script>
