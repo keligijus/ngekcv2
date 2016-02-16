@@ -1,3 +1,24 @@
+<md-sidenav
+  class="md-sidenav-left md-whiteframe-z2"
+  md-component-id="left"
+  md-is-locked-open="$mdMedia('gt-md')"
+  layout="column" flex>
+  <md-list>
+    <md-list-item>
+      <a ui-sref="personalStatement" ui-sref-active="active">Personal statement</a>
+    </md-list-item>
+    <md-list-item>
+      <a ui-sref="skills" ui-sref-active="active">Skills</a>
+    </md-list-item>
+    <md-list-item>
+      <a ui-sref="portfolioItems" ui-sref-active="active">Portfolio Items</a>
+    </md-list-item>
+    <md-list-item>
+      <a ui-sref="hobbies" ui-sref-active="active">Hobbies</a>
+    </md-list-item>
+  </md-list>
+</md-sidenav>
+
 <script>/*
 <div class="navbar-icons" hide-gt-md>
 
@@ -25,21 +46,3 @@
 
 </div>
 */</script>
-
-<md-sidenav
-  class="md-sidenav-left md-whiteframe-z2"
-  md-component-id="left"
-  md-is-locked-open="$mdMedia('gt-md')"
-  layout="column" flex>
-  <md-list>
-    <md-list-item>
-      <a ui-sref="personalStatement" ui-sref-active="active">Personal statement</a>
-    </md-list-item>
-    <md-list-item>
-      <a ui-sref="skills" ui-sref-active="active">Skills</a>
-    </md-list-item>
-    <md-list-item>
-      <a ui-sref="portfolioItems" ui-sref-active="active">Portfolio Items</a>
-    </md-list-item>
-  </md-list>
-</md-sidenav>

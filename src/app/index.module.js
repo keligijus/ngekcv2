@@ -7,6 +7,7 @@
     'personalStatement',
     'skills',
     'portfolioItems',
+    'hobbies',
 
     // resources
     'ngAnimate',

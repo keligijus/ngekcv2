@@ -1,9 +1,8 @@
 (function() {
   'use strict';
 
-  function factory($log, SETTINGS, dataPrepService) {
-    var debug = SETTINGS.debug,
-        dataPrep = dataPrepService,
+  function factory($log, dataPrepService) {
+      var dataPrep = dataPrepService,
         f = {
           portfolioItems: {
             data: [],
@@ -14,9 +13,7 @@
     f.init = function() {
       return dataPrep.getData('portfolioItems', f.portfolioItems.spreadsheetID)
           .then(function(result) {
-
             f.portfolioItems.data = f.checkForDisabledLinks(result);
-
           });
     }
 

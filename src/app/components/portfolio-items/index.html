@@ -1,22 +1,8 @@
-<md-content layout-padding >
+<md-content layout-padding>
 
   <!-- <pre>{{ vm.f.portfolioItems.data | json }}</pre> -->
 
   <h2>Portfolio Items</h2>
-<!-- 
-  {
-    "projectname": "Various Other Projects",
-    "livelink": "#",
-    "screenshotname": "various-projects-screenshot.jpg",
-    "myrole": "Developer / Coder / Copywriter",
-    "loved": "Taking on personal projects is the best way to try out new technologies and learn them. I also loved working with a non-profit organisation as it's an awesome way to help others and share my knowledge",
-    "learned": "Self initiative, managing my own projects, learning about and using new technologies. Evaluating new technologies and finding out if they are fit for regular use.",
-    "loathed": "Not having enough time for side projects.",
-    "technologies": "External services via APIs\nMeteor\nAngular\nVarious CSS frameworks\nJekyll\nJade\nWordPress\nVarious CLI based tools",
-    "skills": "Transferable skills such as:\nCopywriting\nSEO\nBlogging\nSocial Media Management\nWorking with nonprofits",
-    "ideas": "I've worked on many websites and projects. Some of them I cannot disclose yet, because they are not launched yet."
-  } -->
-
 
   <md-card  ng-repeat="item in vm.f.portfolioItems.data" layout-padding>
         <md-card-header>
