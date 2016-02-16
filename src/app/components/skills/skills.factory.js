@@ -1,8 +1,8 @@
 (function() {
   'use strict';
 
-  function factory($http, $log, $q) {
-    var debug = true;
+  function factory($http, $log, $q, SETTINGS) {
+    var debug = SETTINGS.debug;
     var f = {
       softSkill: {
         data: [],
@@ -59,7 +59,7 @@
       if (debug) { $log.log(f[dataType].data); }
     }
 
-    f.cleanupData = function(entry, filter, index, dataType) {
+    f.cleanupData = function(entry, filter) {
       var itemName, dataObj = {};
         for (itemName in entry) {
           if (entry.hasOwnProperty(itemName) && filter.test(itemName)) {

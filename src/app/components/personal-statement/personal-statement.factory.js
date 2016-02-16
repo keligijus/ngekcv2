@@ -1,8 +1,8 @@
 (function() {
   'use strict';
 
-  function factory($resource, $log) {
-    var debug = false;
+  function factory($resource, $log, SETTINGS) {
+    var debug = SETTINGS.debug;
     var f = {
       data: [],
       spreadsheetID: '1OZQIFVP8FH4_2qt97NhnGXYHhkCa357uqzcjbCOF0vI',
