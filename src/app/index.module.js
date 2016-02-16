@@ -5,6 +5,7 @@
     .module('ngekcv2',[
     // app
     'personalStatement',
+    'skills',
 
     // resources
     'ngAnimate',

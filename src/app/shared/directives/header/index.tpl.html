@@ -1,6 +1,13 @@
-<md-toolbar layout="row" layout-padding>
-  <md-button class="menu" hide-gt-sm ng-click="vm.openLeftMenu()">
-    <md-icon md-font-icon="menu">menu</md-icon>
-  </md-button>
+<md-toolbar layout="column" layout-padding>
+  <div class="buttons-wrap" layout="row">
+    <md-button
+      class="menu"
+      hide-gt-md
+      md-no-ink
+      ng-click="vm.openLeftMenu()"
+      style="text-align:left;">
+      <md-icon md-font-icon="menu">menu</md-icon>
+    </md-button>
+  </div>
   <h1>ngekcv2</h1>
 </md-toolbar>

@@ -5,13 +5,14 @@
   /** @ngInject */
   function controller($mdSidenav, $rootScope) {
     var vm = this;
+        vm.rootScope = $rootScope
 
     vm.openLeftMenu = function() {
       $mdSidenav('left').toggle();
     }
 
-    $rootScope.$on('$stateChangeStart',
-      function(event){
+    vm.rootScope.$on('$stateChangeStart',
+      function(){
         $mdSidenav('left').close();
       });
 
