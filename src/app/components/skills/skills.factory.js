@@ -22,10 +22,10 @@
       return "https://spreadsheets.google.com/feeds/list/" + spreadsheetID + "/od6/public/values?alt=json"
     }
 
-    f.softSkill.url = f.getUrl(f.softSkill.spreadsheetID);
-    f.hardSkill.url = f.getUrl(f.hardSkill.spreadsheetID);
 
     f.init = function() {
+      f.softSkill.url = f.getUrl(f.softSkill.spreadsheetID);
+      f.hardSkill.url = f.getUrl(f.hardSkill.spreadsheetID);
       return f.combineData();
     }
 

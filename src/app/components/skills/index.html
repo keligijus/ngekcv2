@@ -1,12 +1,85 @@
-<!-- <div layout="vertical" layout-fill> -->
-  <md-content layout-padding layout="row">
+<md-content layout-padding >
 
-    <!-- <div flex="5" flex-sm="5"></div> -->
-    <!-- <div flex="90" flex-sm="90"> -->
-      <div ng-bind-html="vm.f.data"></div>
-    </div>
-    <!-- <div flex="90" flex-sm="5"></div> -->
+  <!-- <pre>{{ vm.f.hardSkill.data | json }}</pre> -->
+
+  <h2>Soft Skills</h2>
+
+  <md-card  ng-repeat="skill in vm.f.softSkill.data" layout-padding>
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">{{ skill.trait }}</span><br>
+        <span class="md-subhead">{{ skill.whyuseful }}</span>
+      </md-card-title-text>
+      <!-- <md-card-title-media>
+        <div class="md-media-sm card-media"></div>
+      </md-card-title-media> -->
+    </md-card-title>
+  </md-card>
+
+  <h2>Hard Skills</h2>
+
+    <md-card ng-repeat="skill in vm.f.hardSkill.data" layout-padding>
+        <md-card-header>
+          <!-- <md-card-avatar>
+            <img src="img/logo.svg">
+          </md-card-avatar> -->
+          <md-card-header-text>
+            <span class="md-title">{{ skill.toollangskillapiservice }}</span><br>
+            <span class="md-subhead">{{ skill.levelofexperience }}</span>
+          </md-card-header-text>
+        </md-card-header>
+        <!-- <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Card header</span>
+          </md-card-title-text>
+        </md-card-title> -->
+        <md-card-content layout="row">
+          <span>
+            <strong>Loved: </strong>
+          </span>
+          <span>
+            {{ skill.love }}
+          </span>
+        </md-card-content>
+        <md-card-content layout="row">
+          <span>
+            <strong>Learned: </strong>
+          </span>
+          <span>
+            {{ skill.learned }}
+          </span>
+        </md-card-content>
+        <md-card-content layout="row">
+          <span>
+            <strong>Loathed: </strong>
+          </span>
+          <span>
+            {{ skill.loathe }}
+          </span>
+        </md-card-content>
+         <md-card-actions layout="row" layout-align="end center">
+          <!-- <md-button
+            href="{{ skill.linkstoliveprojects }}"
+            class="md-raised md-primary md-button md-ink-ripple">
+            Live project
+            <svg fill="#ffffff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M9 5v2h6.59L4 18.59 5.41 20 17 8.41V15h2V5z"/>
+            </svg>
+          </md-button> -->
+         </md-card-actions>
+      </md-card>
+<!-- 
+  {
+    "toollangskillapiservice": "HTML",
+    "levelofexperience": "Power User ***",
+    "love": "Love the flexibility of HTML5. The idea that it's device agnostic and pretty much timeless",
+    "learned": "Accessability standards\nHTML5 Features (browser local storage, native notifications, browser history events)\nHierarchy of elemements",
+    "loathe": "Some of it's awesome features are not widely supported",
+    "linkstoliveprojects": ""
+  },
+ -->
+  </md-card>
 
 
-    </md-content>
-<!-- </div> -->
+</md-content>
