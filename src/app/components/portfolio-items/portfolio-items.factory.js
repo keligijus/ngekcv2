@@ -14,8 +14,19 @@
     f.init = function() {
       return dataPrep.getData('portfolioItems', f.portfolioItems.spreadsheetID)
           .then(function(result) {
-            f.portfolioItems.data = result;
+
+            f.portfolioItems.data = f.checkForDisabledLinks(result);
+
           });
+    }
+
+    f.checkForDisabledLinks = function(dataArr) {
+        dataArr.forEach(function(item) {
+            if (item.livelink.length <= 1) {
+                item.disableLink = true;
+            }
+        });
+        return dataArr;
     }
 
     return f;

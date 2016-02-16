@@ -3,6 +3,20 @@
   <!-- <pre>{{ vm.f.portfolioItems.data | json }}</pre> -->
 
   <h2>Portfolio Items</h2>
+<!-- 
+  {
+    "projectname": "Various Other Projects",
+    "livelink": "#",
+    "screenshotname": "various-projects-screenshot.jpg",
+    "myrole": "Developer / Coder / Copywriter",
+    "loved": "Taking on personal projects is the best way to try out new technologies and learn them. I also loved working with a non-profit organisation as it's an awesome way to help others and share my knowledge",
+    "learned": "Self initiative, managing my own projects, learning about and using new technologies. Evaluating new technologies and finding out if they are fit for regular use.",
+    "loathed": "Not having enough time for side projects.",
+    "technologies": "External services via APIs\nMeteor\nAngular\nVarious CSS frameworks\nJekyll\nJade\nWordPress\nVarious CLI based tools",
+    "skills": "Transferable skills such as:\nCopywriting\nSEO\nBlogging\nSocial Media Management\nWorking with nonprofits",
+    "ideas": "I've worked on many websites and projects. Some of them I cannot disclose yet, because they are not launched yet."
+  } -->
+
 
   <md-card  ng-repeat="item in vm.f.portfolioItems.data" layout-padding>
         <md-card-header>
@@ -41,16 +55,34 @@
             {{ item.loathed }}
           </span>
         </md-card-content>
+        <md-card-content layout="row">
+          <span>
+            <strong>Skills used: </strong>
+          </span>
+          <span>
+            {{ item.skills }}
+          </span>
+        </md-card-content>
+        <md-card-content layout="row">
+          <span>
+            <strong>Ideas: </strong>
+          </span>
+          <span>
+            {{ item.ideas }}
+          </span>
+        </md-card-content>
          <md-card-actions layout="row" layout-align="end center">
-          <!-- <md-button
-            href="{{ skill.linkstoliveprojects }}"
-            class="md-raised md-primary md-button md-ink-ripple">
+          <md-button
+            href="{{ item.livelink }}"
+            target="_blank"
+            class="md-raised md-primary md-button md-ink-ripple"
+            disabled="{{ item.disableLink }}">
             Live project
             <svg fill="#ffffff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
             <path d="M0 0h24v24H0z" fill="none"/>
             <path d="M9 5v2h6.59L4 18.59 5.41 20 17 8.41V15h2V5z"/>
             </svg>
-          </md-button> -->
+          </md-button>
          </md-card-actions>
       </md-card>
   </md-card>
