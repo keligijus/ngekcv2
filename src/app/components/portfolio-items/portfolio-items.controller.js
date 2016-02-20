@@ -10,6 +10,7 @@
 
         vm.f.init();
 
+
   }
 
   angular

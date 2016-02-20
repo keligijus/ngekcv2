@@ -2,8 +2,15 @@
   'use strict';
 
   /** @ngInject */
-  function controller(/*$timeout, webDevTec, toastr*/) {
+  function controller(PersonalStatementFactory, skillsFactory, portfolioItemsFactory, workExperienceFactory, hobbiesFactory) {
     // var vm = this;
+
+    PersonalStatementFactory.init();
+    skillsFactory.init();
+    portfolioItemsFactory.init();
+    workExperienceFactory.init();
+    hobbiesFactory.init();
+
 
   }
 
