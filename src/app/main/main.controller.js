@@ -2,15 +2,11 @@
   'use strict';
 
   /** @ngInject */
-  function controller(PersonalStatementFactory, skillsFactory, portfolioItemsFactory, workExperienceFactory, hobbiesFactory) {
-    // var vm = this;
+  function controller(initAllService) {
+    var vm = this;
+    vm.s = initAllService
 
-    PersonalStatementFactory.init();
-    skillsFactory.init();
-    portfolioItemsFactory.init();
-    workExperienceFactory.init();
-    hobbiesFactory.init();
-
+    vm.s.run();
 
   }
 

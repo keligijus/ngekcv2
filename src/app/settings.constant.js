@@ -2,7 +2,7 @@
   'use strict';
 
   var settings = {
-        debug: true,
+        debug: false,
         imgPath: 'https://googledrive.com/host/0BxUJ29Ox0i27VFBHRDNHUEZkR2c/'
       };
 
