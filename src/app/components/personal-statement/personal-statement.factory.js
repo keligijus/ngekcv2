@@ -13,33 +13,13 @@
     f.init = function() {
       return dataPrep.getData('personalStatement', f.personalStatement.spreadsheetID)
           .then(function(result) {
-            f.personalStatement.data = result[0].personalstatement.replace(/\r?\n/g, '<br />');
+            f.personalStatement.data = f.addLineBreaks(result[0].personalstatement);
           });
     }
 
-    // f.prepStatement = function(){
-    //   f.personalStatement.data = f.personalStatement.data.replace(/\r?\n/g, '<br />');
-    // }
-
-    // f.resource = $resource("https://spreadsheets.google.com/feeds/list/" + f.spreadsheetID + "/od6/public/values?alt=json");
-
-    // f.init = function() {
-    //   return f.getStatement().then(function(){
-    //     f.prepStatement();
-    //   });
-    // }
-
-    // f.getStatement = function(){
-    //   return f.resource.get().$promise
-    //     .then(function(response){
-    //       if (debug) { $log.debug("Retrieved Personal Statement Spreadsheet"); }
-    //       if (debug) { $log.log("Data: ", response.feed.entry[0].gsx$personalstatement.$t); }
-
-    //       f.data = response.feed.entry[0].gsx$personalstatement.$t;
-
-    //       return;
-    //     });
-    //   }
+    f.addLineBreaks = function(string) {
+      return string.replace(/\r?\n/g, '<br>');
+    }
 
 
     return f;

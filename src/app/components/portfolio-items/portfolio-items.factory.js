@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  function factory($log, dataPrepService) {
+  function factory(dataPrepService) {
       var dataPrep = dataPrepService,
         f = {
           portfolioItems: {
