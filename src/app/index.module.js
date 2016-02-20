@@ -12,15 +12,14 @@
 
     // resources
     'ngAnimate',
-    'ngCookies',
+    // 'ngCookies',
     'ngTouch',
     'ngSanitize',
-    'ngMessages',
-    'ngAria',
-    'ngResource',
+    // 'ngMessages',
+    // 'ngAria',
+    // 'ngResource',
     'ui.router',
-    'ngMaterial',
-    'toastr'
+    'ngMaterial'
     ]);
 
 })();

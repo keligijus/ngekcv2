@@ -11,7 +11,7 @@
       .state('hobbies', {
         url: '/hobbies',
         templateUrl: 'app/components/hobbies/index.html',
-        controller: 'hobbiesController',
+        controller: 'HobbiesController',
         controllerAs: 'vm'
       });
 

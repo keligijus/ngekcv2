@@ -11,7 +11,7 @@
 
     s.getData = function(dataType, spreadsheetID) {
       var url = s.getUrl(spreadsheetID);
-      return $http.get(url).then(function(response) {
+      return $http.get(url, { cache: true }).then(function(response) {
         if (debug) { $log.debug("Retrieved " + dataType + " data"); }
         if (debug) { $log.log(response.data.feed); }
 
@@ -21,9 +21,11 @@
     }
 
     s.prepData = function(data, dataType) {
-      var dataArr = [];
+      var dataArr = [],
+          regex = /gsx\$\w+/;
+
       data.entry.forEach(function(entry, index) {
-        dataArr[index] = s.removeGooglePrefixes(entry, /gsx\$\w+/, index, dataType);
+        dataArr[index] = s.removeGooglePrefixes(entry, regex, index, dataType);
       });
 
       if (debug) { $log.debug("Ready data for " + dataType); }
