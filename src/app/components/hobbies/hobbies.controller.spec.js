@@ -1,21 +1,13 @@
-(function() {
-  'use strict';
+// ngDescribe({
+//   name: 'hobbies.controller',
+//   modules: [ 'ngekcv2' ],
+//   inject: [ 'hobbiesFactory' ],
+//   element: '<div ng-controller="HobbiesController as vm"></div>',
+//   tests: function (deps) {
+//     it('should refer to hobbiesFactory', function(){
+//       var vm = deps.element.scope().vm;
 
-  describe('Hobbies controller', function(){
-    var vm;
-    var hobbiesFactory;
-
-    beforeEach(module('ngekcv2'));
-    beforeEach(inject(function(_$controller_, _hobbiesFactory_) {
-
-      vm = _$controller_('HobbiesController');
-      hobbiesFactory = _hobbiesFactory_;
-    }));
-
-    it('should refer to hobbiesFactory', function() {
-      expect(vm.f).toEqual(hobbiesFactory);
-    });
-
-
-  });
-})();
+//       expect(vm.f).toEqual(deps.hobbiesFactory)
+//     });
+//   }
+// });
