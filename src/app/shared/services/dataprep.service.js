@@ -3,7 +3,7 @@
 
   function service($http, $q, $log, SETTINGS) {
     var s = {};
-    var debug = SETTINGS.debug;
+        s.debug = SETTINGS.debug;
 
     s.getUrl = function(spreadsheetID) {
       return "https://spreadsheets.google.com/feeds/list/" + spreadsheetID + "/od6/public/values?alt=json"
@@ -12,10 +12,9 @@
     s.getData = function(dataType, spreadsheetID) {
       var url = s.getUrl(spreadsheetID);
       return $http.get(url, { cache: true }).then(function(response) {
-        if (debug) { $log.debug("Retrieved " + dataType + " data"); }
-        if (debug) { $log.log(response.data.feed); }
+        s.debug && $log.debug("Retrieved " + dataType + " data");
+        s.debug && $log.log(response.data.feed);
 
-        // return response.data.feed;
         return s.prepData(response.data.feed, dataType);
       });
     }
@@ -28,8 +27,8 @@
         dataArr[index] = s.removeGooglePrefixes(entry, regex, index, dataType);
       });
 
-      if (debug) { $log.debug("Ready data for " + dataType); }
-      if (debug) { $log.log(dataArr); }
+      s.debug && $log.debug("Ready data for " + dataType);
+      s.debug && $log.log(dataArr);
 
       return dataArr;
     }
