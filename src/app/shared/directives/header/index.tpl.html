@@ -1,13 +1,17 @@
-<md-toolbar layout="column" layout-padding>
-  <div class="buttons-wrap" layout="row">
-    <md-button
-      class="menu"
-      hide-gt-md
-      md-no-ink
-      ng-click="vm.openLeftMenu()"
-      style="text-align:left;">
-      <md-icon md-font-icon="menu">menu</md-icon>
+<md-toolbar class="md-hue-2">
+  <div class="md-toolbar-tools">
+    <md-button hide-gt-md class="md-icon-button" aria-label="Navigation" ng-click="vm.openLeftMenu()">
+      <md-icon md-font-library="material-icons">menu</md-icon>
     </md-button>
+    <h2>
+      <a ui-sref="home">
+        Eligijus Krėpšta<br>
+        <small>Front End Geek</small>
+      </a>
+    </h2>
+    <span flex></span>
+    <!-- <md-button class="md-icon-button" aria-label="Contacts">
+      <md-icon md-font-library="material-icons">contacts</md-icon>
+    </md-button> -->
   </div>
-  <h1>ngekcv2</h1>
 </md-toolbar>
