@@ -7,3 +7,6 @@ before_script:
   - npm install
   - bower install
 script: gulp test
+after_success:
+  - gulp build
+  - surge --project ./dist --domain ngekcv.surge.sh
