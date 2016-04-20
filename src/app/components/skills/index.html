@@ -4,15 +4,15 @@
 
   <div layout="row" layout-align="center start" layout-wrap>
 
-    <md-card  ng-repeat="skill in vm.f.softSkill.data" layout-padding flex="100" flex-gt-sm="45">
+    <md-card  ng-repeat="skill in vm.f.softSkill.data"
+        layout-padding
+        flex="100"
+        flex-gt-sm="45">
       <md-card-title>
         <md-card-title-text>
           <span class="md-headline">{{ skill.trait }}</span><br>
           <span class="md-subhead">{{ skill.whyuseful }}</span>
         </md-card-title-text>
-        <!-- <md-card-title-media>
-          <div class="md-media-sm card-media"></div>
-        </md-card-title-media> -->
       </md-card-title>
     </md-card>
 
@@ -32,26 +32,26 @@
 
         <md-card-content layout-xs="column" layout-gt-sm="row">
           <div layout="row" flex="33">
-            <div class="skill-title">
+            <div class="ek-card-title">
               <strong>Loved: </strong>
             </div>
-            <div class="skill-content">
+            <div class="ek-card-description">
               {{ skill.love }}
             </div>
           </div>
           <div layout="row" flex="33">
-            <div class="skill-title">
+            <div class="ek-card-title">
               <strong>Learned: </strong>
             </div>
-            <div class="skill-content">
+            <div class="ek-card-description">
               {{ skill.learned }}
             </div>
           </div>
           <div layout="row" flex="33">
-            <div class="skill-title">
+            <div class="ek-card-title">
               <strong>Loathed: </strong>
             </div>
-            <div class="skill-content">
+            <div class="ek-card-description">
               {{ skill.loathe }}
             </div>
           </div>

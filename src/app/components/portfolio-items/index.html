@@ -1,61 +1,54 @@
 <md-content layout-padding>
 
-  <!-- <pre>{{ vm.f.portfolioItems.data | json }}</pre> -->
-
   <h2>Portfolio Items</h2>
 
-  <md-card  ng-repeat="item in vm.f.portfolioItems.data" layout-padding>
-        <md-card-header>
-          <md-card-header-text>
-            <span class="md-title">{{ item.projectname }}</span><br>
-            <span class="md-subhead">{{ item.myrole }}</span>
-          </md-card-header-text>
-        </md-card-header>
-        <!-- <md-card-title>
-          <md-card-title-text>
-            <span class="md-headline">Card header</span>
-          </md-card-title-text>
-        </md-card-title> -->
-        <img class="md-card-image" ng-src="{{vm.settings.imgPath + item.screenshotname}}">
+  <md-card ng-repeat="item in vm.f.portfolioItems.data" layout-padding>
+    <md-card-header>
+      <md-card-header-text>
+        <span class="md-title">{{ item.projectname }}</span><br>
+        <span class="md-subhead">{{ item.myrole }}</span>
+      </md-card-header-text>
+    </md-card-header>
+    <img class="md-card-image" ng-src="{{vm.settings.imgPath + item.screenshotname}}">
         <md-card-content layout="row">
-          <span>
+          <div class="ek-card-title">
             <strong>Loved: </strong>
-          </span>
-          <span>
+          </div>
+          <div class="ek-card-description">
             {{ item.loved }}
-          </span>
+          </div>
         </md-card-content>
         <md-card-content layout="row">
-          <span>
+          <div class="ek-card-title">
             <strong>Learned: </strong>
-          </span>
-          <span>
+          </div>
+          <div class="ek-card-description">
             {{ item.learned }}
-          </span>
+          </div>
         </md-card-content>
         <md-card-content layout="row">
-          <span>
+          <div class="ek-card-title">
             <strong>Loathed: </strong>
-          </span>
-          <span>
+          </div>
+          <div class="ek-card-description">
             {{ item.loathed }}
-          </span>
+          </div>
         </md-card-content>
         <md-card-content layout="row">
-          <span>
+          <div class="ek-card-title">
             <strong>Skills used: </strong>
-          </span>
-          <span>
+          </div>
+          <div class="ek-card-description">
             {{ item.skills }}
-          </span>
+          </div>
         </md-card-content>
         <md-card-content layout="row">
-          <span>
+          <div class="ek-card-title">
             <strong>Ideas: </strong>
-          </span>
-          <span>
+          </div>
+          <div class="ek-card-description">
             {{ item.ideas }}
-          </span>
+          </div>
         </md-card-content>
          <md-card-actions layout="row" layout-align="end center">
           <md-button
