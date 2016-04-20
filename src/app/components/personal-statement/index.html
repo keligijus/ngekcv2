@@ -1,12 +1,7 @@
-<!-- <div layout="vertical" layout-fill> -->
-  <md-content layout-padding layout="row">
-
-    <!-- <div flex="5" flex-sm="5"></div> -->
-    <!-- <div flex="90" flex-sm="90"> -->
-      <div ng-bind-html="vm.f.personalStatement.data"></div>
-    </div>
-    <!-- <div flex="90" flex-sm="5"></div> -->
-
-
-    </md-content>
-<!-- </div> -->
+<md-content layout-padding layout-margin>
+  <div ng-bind-html="vm.f.personalStatement.data"></div>
+  <div layout="row" layout-align="end center">
+    <md-button ui-sref="workExperience">Work Experience</md-button>
+    <md-button ui-sref="skills">Skills</md-button>
+  </div>
+</md-content>
