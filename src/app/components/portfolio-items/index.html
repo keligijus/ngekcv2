@@ -9,7 +9,10 @@
         <span class="md-subhead">{{ item.myrole }}</span>
       </md-card-header-text>
     </md-card-header>
-    <img class="md-card-image" ng-src="{{vm.settings.imgPath + item.screenshotname}}">
+
+    <md-progress-linear ng-if="! item.hideLoader" md-mode="indeterminate"></md-progress-linear>
+
+    <img class="md-card-image" ng-src="{{vm.settings.imgPath + item.screenshotname}}" ek-image-loaded>
         <md-card-content layout="row">
           <div class="ek-card-title">
             <strong>Loved: </strong>

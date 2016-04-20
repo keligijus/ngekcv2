@@ -10,14 +10,10 @@
     'hobbies',
     'workExperience',
 
-    // resources
     'ngAnimate',
-    // 'ngCookies',
     'ngTouch',
     'ngSanitize',
-    // 'ngMessages',
-    // 'ngAria',
-    // 'ngResource',
+    'ngAria',
     'ui.router',
     'ngMaterial'
     ]);
