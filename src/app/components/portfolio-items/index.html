@@ -12,7 +12,7 @@
 
     <md-progress-linear ng-if="! item.hideLoader" md-mode="indeterminate"></md-progress-linear>
 
-    <img class="md-card-image" ng-src="{{vm.settings.imgPath + item.screenshotname}}" ek-image-loaded>
+    <img class="md-card-image" ng-src="{{ item.screenshoturl }}" ek-image-loaded>
         <md-card-content layout="row">
           <div class="ek-card-title">
             <strong>Loved: </strong>
