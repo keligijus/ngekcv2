@@ -20,6 +20,7 @@ function listFiles() {
     .concat([
       path.join('node_modules/ng-describe/dist/ng-describe.js'),
       path.join(conf.paths.src, '/app/**/*.module.js'),
+      path.join(conf.paths.src, './../tests/httpBackendMocks.module.js'),
       path.join(conf.paths.src, '/app/**/*.js'),
       path.join(conf.paths.src, '/**/*.spec.js'),
       path.join(conf.paths.src, '/**/*.mock.js')
