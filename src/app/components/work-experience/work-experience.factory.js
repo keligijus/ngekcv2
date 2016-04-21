@@ -1,8 +1,8 @@
 (function() {
   'use strict';
 
-  function factory($log, dataPrepService) {
-      var dataPrep = dataPrepService,
+  function factory($log, dataPrepFactory) {
+      var dataPrep = dataPrepFactory,
         f = {
           workExperience: {
             data: [],

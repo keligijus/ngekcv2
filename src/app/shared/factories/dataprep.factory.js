@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  function service($http, $q, $log, SETTINGS) {
+  function factory($http, $q, $log, SETTINGS) {
     var s = {};
         s.debug = SETTINGS.debug;
 
@@ -50,5 +50,5 @@
 
   angular
     .module('ngekcv2')
-    .factory('dataPrepService', service);
+    .factory('dataPrepFactory', factory);
 })();

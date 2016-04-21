@@ -1,8 +1,8 @@
 (function() {
   'use strict';
 
-  function factory(dataPrepService) {
-    var dataPrep = dataPrepService,
+  function factory(dataPrepFactory) {
+    var dataPrep = dataPrepFactory,
         f = {
       personalStatement: {
         data: [],

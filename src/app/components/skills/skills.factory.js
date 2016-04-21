@@ -1,9 +1,9 @@
 (function() {
   'use strict';
 
-  function factory($http, $log, $q, SETTINGS, dataPrepService) {
+  function factory($http, $log, $q, SETTINGS, dataPrepFactory) {
     var debug = SETTINGS.debug,
-        d = dataPrepService,
+        d = dataPrepFactory,
         f = {
       softSkill: {
         data: [],

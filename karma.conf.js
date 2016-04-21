@@ -54,7 +54,7 @@ module.exports = function(config) {
       moduleName: 'ngekcv2'
     },
 
-    logLevel: 'WARN',
+    logLevel: 'INFO', //DISABLE, ERROR, WARN, INFO, DEBUG
 
     frameworks: ['jasmine', 'angular-filesort'],
 
@@ -69,7 +69,8 @@ module.exports = function(config) {
       'karma-angular-filesort',
       'karma-coverage',
       'karma-jasmine',
-      'karma-ng-html2js-preprocessor'
+      'karma-ng-html2js-preprocessor',
+      'karma-spec-reporter'
     ],
 
     coverageReporter: {
@@ -77,7 +78,16 @@ module.exports = function(config) {
       dir : 'coverage/'
     },
 
-    reporters: ['progress'],
+    reporters: ['progress', 'spec'],
+
+    specReporter: {
+      maxLogLines: 5,         // limit number of lines logged per test
+      suppressErrorSummary: true,  // do not print error summary
+      suppressFailed: false,  // do not print information about failed tests
+      suppressPassed: false,  // do not print information about passed tests
+      suppressSkipped: true,  // do not print information about skipped tests
+      showSpecTiming: false // print the time elapsed for each spec
+    },
 
     proxies: {
       '/assets/': path.join('/base/', conf.paths.src, '/assets/')

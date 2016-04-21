@@ -1,13 +1,20 @@
-// ngDescribe({
-//   name: 'hobbies.controller',
-//   modules: [ 'ngekcv2' ],
-//   inject: [ 'hobbiesFactory' ],
-//   element: '<div ng-controller="HobbiesController as vm"></div>',
-//   tests: function (deps) {
-//     it('should refer to hobbiesFactory', function(){
-//       var vm = deps.element.scope().vm;
+ngDescribe({
+  name: 'HobbiesController',
+  modules: [ 'ngekcv2' ],
+  inject: [ '$httpBackend', 'hobbiesFactory' ],
+  element: '<div ng-controller="HobbiesController as vm"></div>',
+  tests: function (deps) {
+    beforeEach(function(){
+      var id = '1NfV_AwxXAyEB7HiAeYeXB0uhLbgyRsDeMdvffEKmIwY',
+          link = "https://spreadsheets.google.com/feeds/list/" + id + "/od6/public/values?alt=json"
+      deps.$httpBackend.expectGET(link).respond(200);
+    });
 
-//       expect(vm.f).toEqual(deps.hobbiesFactory)
-//     });
-//   }
-// });
+    it('should refer to hobbiesFactory', function(){
+      var vm = deps.element.scope().vm;
+
+      expect(vm.f).toEqual(deps.hobbiesFactory);
+    });
+
+  }
+});

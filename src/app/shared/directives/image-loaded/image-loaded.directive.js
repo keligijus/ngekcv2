@@ -4,7 +4,7 @@
   function directive() {
     var directive = {
       restrict: 'A',
-      link: function($scope, element, attrs) {
+      link: function($scope, element) {
         element.bind('load', function() {
           $scope.$apply(function(){
             $scope.item.hideLoader = true;
